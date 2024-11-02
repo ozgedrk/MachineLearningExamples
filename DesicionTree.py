@@ -31,7 +31,7 @@ conf_matrix = confusion_matrix(y_test, y_predict)
 print("conf_matrix:")
 print(conf_matrix)
 
-plt.figure(figsize=(15,10))
+plt.figure(figsize=(15,10)) 
 plot_tree(tree_clf, filled= True , feature_names= iris.feature_names , class_names= list(iris.target_names))
 plt.show()
 
