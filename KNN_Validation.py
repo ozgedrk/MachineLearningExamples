@@ -84,7 +84,7 @@ print(LOOCV)
 
 fig=plt.figure()
 ax = fig.add_subplot(1, 1, 1)
-ax.plot(LOOCV['NeighbourSize'].values,LOOCV['Validation Accuracy'].values,label = '10 fold CV Error')
+ax.plot(LOOCV['NeighbourSize'].values,LOOCV['Validation Accuracy'].values,label = 'Leave One Out Error')
 ax.set_xlabel('Komşu Sayısı')
 ax.set_ylabel('Doğruluk')
 ax.tick_params(axis='x', labelsize=8)
