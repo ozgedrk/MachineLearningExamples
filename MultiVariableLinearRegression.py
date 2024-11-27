@@ -39,6 +39,66 @@ plt.title("multi variable linear regression")
 print("Kat Sayilar: ", lin_reg.coef_)
 print("Kesisim: ", lin_reg.intercept_)
 
+# %%
+from sklearn.datasets import load_diabetes
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error
+import matplotlib.pyplot as plt
+
+diabetes = load_diabetes()
+
+X = diabetes.data
+y = diabetes.target
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 42)
+
+lin_reg = LinearRegression()
+lin_reg.fit(X_train, y_train)
+
+y_pred = lin_reg.predict(X_test)
+
+#    squared : bool, default=True
+#    If True returns MSE value, if False returns RMSE value.
+
+rmse = mean_squared_error(y_test, y_pred, squared = False)
+print("rmse: ", rmse)
+
+
+# Gerçek değerler vs Tahmin edilen değerler
+plt.figure(figsize=(8, 6))
+plt.scatter(y_test, y_pred, color='blue', alpha=0.6)
+plt.plot([y_test.min(), y_test.max()], [y_test.min(), y_test.max()], 'r--', lw=2)
+plt.xlabel("Gerçek Değerler")
+plt.ylabel("Tahmin Edilen Değerler")
+plt.title("Gerçek vs Tahmin")
+plt.show()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
