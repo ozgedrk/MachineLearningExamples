@@ -1,2 +1,3 @@
-﻿# Machine Learning Algorithms And Examples 
-![Uploading image.png…]()
+# Machine Learning Algorithms And Examples
+
+![Description of Image](images/image.png)
